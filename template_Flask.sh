@@ -1,5 +1,15 @@
 #!/bin/bash
 
+################################################################################ 
+# Create Project
+################################################################################
+
+# provide sudo for the following commands (like chmod,...) and exit if wrong password or ctrl + c
+if ! sudo true;
+then
+    exit 1
+fi
+
 #check project name
 if [ $1 ];
 then
@@ -9,10 +19,6 @@ else
     echo 'No project name'
 	exit 1
 fi
-
-# provide sudo for the following commands (like chmod,...)
-sudo true
-
 
 cd "$PROJECT_NAME" # Use variable and double quotes
 
@@ -51,10 +57,30 @@ pip install flask
 ################################################################################
 
 #######################################
+# Create requirements.txt
+#######################################
+touch requirements.txt
+
+#######################################
 # create source folder
 #######################################
 mkdir src
 cd src
+
+#######################################
+# Create models folđer
+#######################################
+mkdir models
+
+#######################################
+# Create template folder
+#######################################
+mkdir templates
+
+#######################################
+# Create static folder
+#######################################
+mkdir static
  
 #######################################
 # create constant folder
@@ -262,4 +288,3 @@ echo "DONE"
 cd ..
 
 sudo ./start.sh
-
