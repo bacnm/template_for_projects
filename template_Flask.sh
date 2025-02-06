@@ -46,7 +46,7 @@ python3 -m venv "$FLASK_ENV_FOLDER"
 source "$FLASK_ENV_FOLDER/bin/activate"
 
 ############################in########
-# install requirements.txt
+# install requirements
 ######################################
 
 pip install flask
